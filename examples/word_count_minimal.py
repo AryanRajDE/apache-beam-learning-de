@@ -75,7 +75,7 @@ def main(argv=None, save_main_session=True):
   beam_options = PipelineOptions(runner='DataflowRunner',
                                 #  project='my-project-id',
                                  job_name='word-count',
-                                #  temp_location='gs://my-bucket/temp',
+                                 temp_location='examples\data\templates',
                                  )
 
   beam_options = PipelineOptions(pipeline_args)

@@ -1,6 +1,10 @@
-# Dataflow templates
+# Dataflow Templates
 
 Dataflow templates allow you to package a Dataflow pipeline for deployment. Anyone with the correct permissions can  use the template to deploy the packaged pipeline. You can create your own custom Dataflow templates, and Google provides [pre-built templates](https://cloud.google.com/dataflow/docs/templates/provided-templates) for common scenarios.
+
+## Need for a template
+
+The primary goal of the templates is to package the dataflow pipelines in the form of reusable components by only changing the required pipeline parameters. The template files are staged on GCS bucket and can be launched either from the console, gcloud command or from other services like Cloud Scheduler/CloudFunctions/Apache Airflow, etc.
 
 ## Benefits
 
@@ -51,11 +55,9 @@ Ensure that these two service accounts have appropriate roles. For more informat
 
 ## Apache Beam SDK version requirements
 
-To create your own templates, make sure your Apache Beam SDK version supports template creation.
-
-To create templates with the Apache Beam SDK 2.x for Python, you must have version 2.0.0 or higher.
-
-To run templates with Google Cloud CLI, you must have [Google Cloud CLI](https://cloud.google.com/sdk/downloads) version 138.0.0 or higher.
+* To create your own templates, make sure your Apache Beam SDK version supports template creation.
+* To create templates with the Apache Beam SDK 2.x for Python, you must have version 2.0.0 or higher.
+* To run templates with Google Cloud CLI, you must have [Google Cloud CLI](https://cloud.google.com/sdk/downloads) version 138.0.0 or higher.
 
 ## Extend templates
 
