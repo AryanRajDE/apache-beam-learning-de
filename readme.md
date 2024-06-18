@@ -14,7 +14,7 @@ Apache Beam is designed to enable pipelines to be portable across different runn
 
 ### `Why choose Apache Beam`
 
-First, Apache Beam is very effective, and it is effortless for use with Java as well as python. In contrast to Apache Spark, Apache Beam requires less configuration. Apache Beam is an open ecosystem, independent of any particular vendor, and run by a community. 
+First, Apache Beam is very effective, and it is effortless for use with Java as well as python. In contrast to Apache Spark, Apache Beam requires less configuration. Apache Beam is an open ecosystem, independent of any particular vendor, and run by a community.
 
 ###### Beam has four essential components -
 
@@ -37,9 +37,7 @@ First, Apache Beam is very effective, and it is effortless for use with Java as 
 * Portable – Exectues pipelines on mutiple execution environment,
 * Open Source – Community Based Developement
 
-
-    ![1718521164047](image/readme/1718521164047.png "Apache Beam Architecture")
-
+  ![1718521164047](image/readme/1718521164047.png "Apache Beam Architecture")
 
 # Google Cloud Dataflow
 
@@ -63,7 +61,7 @@ For standard data processing solutions, Google Cloud Dataflow provides quick-sta
 
 Google promotes Dataflow as one of the major components of a Big Data architecture on GCP. With the ability to extract data from open sources, this serverless solution is native to the Google Cloud Platform, enabling quick implementation and integration. Dataflow can also run custom ETL solutions since it has: building blocks for Operational Data Store and data warehousing; pipelines for data filtering and enrichment; pipelines to de-identify PII datasets; features to detect anomalies in financial transactions; and log exports to external systems.
 
-#### `Summarizing`
+###### Summarizing
 
 Cloud Dataflow is a fully managed service for running Apache Beam pipelines on Google Cloud Platform. Cloud Dataflow executes data processing jobs. Dataflow is designed to run on a very large dataset, it distributes these processing tasks to several virtual machines in the cluster so that they can process different chunks of data in parallel. Cloud Dataflow is certainly not the first big data processing engine, its not the only one available on Google Cloud Platform.
 
@@ -75,6 +73,81 @@ Cloud Dataflow is a fully managed service for running Apache Beam pipelines on G
 * Designing the ETL pipeline in the framework style enables users to create reusable solutions with self-service capabilities.
 * Serverless and decoupled architecture is a cost-effective approach to accommodating the customer needs.
 
+### Steps for Python venv installation and apache beam installation
+
+###### To Install Python 3.9 in Windows
+
+1. Go To this link and install python version 3.9 or any of your choice for your windows.
+
+   [Python Installation for Windows](https://www.pythonguis.com/installation/install-python-windows/)
+2. Check and validate the python version in your windows
+
+   ```
+   python --version 
+   or 
+   python -V
+   ```
+
+###### To Create Python Virtual Env in any IDE
+
+1. Create a virtual env by running given command
+
+   ```python
+   python -m venv env
+   ```
+2. Activate the venv for windows via your ide terminal
+
+   ```python
+   env\Scripts\activate
+   ```
+3. Activate the venv for linux
+
+   ```python
+   source my-env/bin/activate
+   ```
+4. Install or upgrade setuptools wheel
+
+   ```python
+   pip install --upgrade pip setuptools wheel
+   ```
+5. Check and validate the python version in your ide terminal
+
+   ```
+   python --version
+   ```
+
+**To Install Apache Beam**
+
+1. Run given command to install apache beam gcp.
+
+   ```python
+   # For Latest version
+   pip install "apache-beam[gcp]"
+
+   # For Version: 2.56.0
+   pip install "apache-beam[gcp]==2.56.0"
+   ```
+2. Check and validate the apache beam version in your ide terminal
+
+   ```python
+   pip show apache-beam
+   ```
+
+   ```python
+   # Command Output
+   Name: apache-beam
+   Version: 2.56.0
+   Summary: Apache Beam SDK for Python
+   Home-page: https://beam.apache.org
+   Author: Apache Software Foundation
+   Author-email: dev@beam.apache.org
+   License: Apache License, Version 2.0 
+   ```
+
+###### Compatible Apache Beam and Python version to use along
+
+* Python version -> `Python 3.9.13`
+* Apache Beam Version -> `Apache Beam 2.56.0`
 
 # References and Links
 

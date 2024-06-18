@@ -1,0 +1,5 @@
+Parameters to create classic templates
+
+python classic_template.py --runner DataflowRunner --temp_location .\examples\data\templates\temp_location --template_location .\examples\data\templates\classic_template.json --save_main_session 
+--project PROJECT_ID \
+--region REGION

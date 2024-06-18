@@ -1,7 +1,4 @@
-"""A minimalist word-counting workflow that counts words in Shakespeare.
-
-This is the first in a series of successively more detailed 'word count'
-examples.
+"""A minimalist word-counting workflow that counts words.
 
 Concepts:
     1. Reading data from text files

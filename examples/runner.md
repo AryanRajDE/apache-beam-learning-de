@@ -1,6 +1,6 @@
 # How To Run
 
-This runner file contains the details on how to run the beam files with python codes and also how to run the beam templates on the cloud dataflow.
+This runner file contains the details on how to run the beam files with python codes and also how to create classic template and how to run the beam templates on the google cloud dataflow.
 
 ### To Run the Python Files
 
@@ -13,12 +13,13 @@ python -m word_count_minimal --input .\data\inputs\word_count* --output .\data\o
 #### DataflowRunner
 
 ```python
-python -m word_count_minimal --input .\data\inputs\word_count* 
-			     --output .\data\outputs\counts
-                             --runner DataflowRunner
-			     --project YOUR_GCP_PROJECT
-    			     --region YOUR_GCP_REGION
-    			     --temp_location gs://YOUR_GCS_BUCKET/tmp/
+python -m word_count_minimal \
+    --input .\data\inputs\word_count* \
+    --output .\data\outputs\counts \
+    --runner DataflowRunner \
+    --project YOUR_GCP_PROJECT \
+    --region YOUR_GCP_REGION \
+    --temp_location gs://YOUR_GCS_BUCKET/tmp/
 ```
 
 ### To Run the Beam Templates
@@ -72,7 +73,6 @@ Replace the following:
 * `LOCATION`: the [region](https://cloud.google.com/dataflow/docs/resources/locations) where you want to deploy your Dataflow job—for example, `us-central1`
 * `BUCKET_NAME`: the name of your Cloud Storage bucket
 
-
 ### What to do for creating templates
 
 There's one primary change in the code when you want to create a beam template i.e., the change of your args given to the pipeline.
@@ -96,8 +96,6 @@ def run(argv=None):
     p = beam.Pipeline(options=pipeline_options)
 ```
 
-
-
 Now for a **templatable pipeline**, all you need to do is make a class for your args, change `add_argument` to  `add_value_provider_argument` , and finally make the options accessible in as an object.
 
 ```python
@@ -120,6 +118,17 @@ def run():
     p = beam.Pipeline(options=pipeline_options)
 ```
 
+### Command to create the classic templates
+
+```python
+python classic_template.py \
+        --runner DataflowRunner \
+        --temp_location gs://some_bucket/temp_location \
+        --template_location gs://some_bucket/templates/classic_template.json \
+        --save_main_session \
+        --project PROJECT_ID \
+        --region REGION
+```
 
 #### NOTE
 
@@ -127,3 +136,4 @@ def run():
    For example: ReadFromText('.\word_count*')
 2. While using ReadFromText('.\word_count*')
    use * at the end of file which you are reading as the file contains a shard number.
+3. We can not create classic template, if we choose runner=DirectRunner, as template only gets created, when we choose the python code to be excutable via the GCP Dataflow (runner=DataflowRunner).
