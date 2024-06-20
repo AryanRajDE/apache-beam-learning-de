@@ -16,21 +16,21 @@ Apache Beam is designed to enable pipelines to be portable across different runn
 
 First, Apache Beam is very effective, and it is effortless for use with Java as well as python. In contrast to Apache Spark, Apache Beam requires less configuration. Apache Beam is an open ecosystem, independent of any particular vendor, and run by a community.
 
-###### Beam has four essential components -
+#### Beam has four essential components -
 
 * `Pipeline` is a complete process consisting of steps that read, transform, and save data. It starts with the input (source or database table), involves transformations, and ends with the output (sink or database table). Transformation operations can include filtering, joining, aggregating, etc., and are applied to data to give it meaning and the form desired by the end user.
 * `PCollection` is a specialized container of nearly unlimited size representing a set of data in the pipeline. PCollections are the input and the output of every single transformation operation.
 * `PTransform` is a data processing step inside of your pipeline. Whatever operation you choose – data format conversion, mathematical computation, data grouping, combining, or filtering – you specify it, and a transform performs it on each element from PCollection. P in the name stands for parallel as transforms can operate in parallel in a large amount of distributed workers.
 * `Runner` determines where the pipeline will operate.
 
-###### Why Data Engineer's Use Beam -
+#### Why Data Engineer's Use Beam -
 
 * Data Engineers mostly used Beam so as to create Extract,Transform and Load (ETL) tasks and for Data Integration.
 * It is also useful in embracing parallel data processing tasks.
 * In data processing tasks, the problem decompose into smaller chunks and processed independently, in other words we are running Map-Reduce jobs.
 * As a result,Apache Beam achieves parallel processing.
 
-###### Features of Apache Beam -
+#### Features of Apache Beam -
 
 * Unified – Single Programming for Batch + Streaming
 * Extensible – Write and Share new SDKs,IO connectors and transformation libraries.
@@ -61,7 +61,7 @@ For standard data processing solutions, Google Cloud Dataflow provides quick-sta
 
 Google promotes Dataflow as one of the major components of a Big Data architecture on GCP. With the ability to extract data from open sources, this serverless solution is native to the Google Cloud Platform, enabling quick implementation and integration. Dataflow can also run custom ETL solutions since it has: building blocks for Operational Data Store and data warehousing; pipelines for data filtering and enrichment; pipelines to de-identify PII datasets; features to detect anomalies in financial transactions; and log exports to external systems.
 
-###### Summarizing
+#### Summarizing
 
 Cloud Dataflow is a fully managed service for running Apache Beam pipelines on Google Cloud Platform. Cloud Dataflow executes data processing jobs. Dataflow is designed to run on a very large dataset, it distributes these processing tasks to several virtual machines in the cluster so that they can process different chunks of data in parallel. Cloud Dataflow is certainly not the first big data processing engine, its not the only one available on Google Cloud Platform.
 
@@ -75,7 +75,7 @@ Cloud Dataflow is a fully managed service for running Apache Beam pipelines on G
 
 # Steps for Python venv installation and apache beam installation
 
-###### To Install Python 3.9 in Windows
+### To Install Python 3.9 in Windows
 
 1. Go To this link and install python version 3.9 or any of your choice for your windows.
 
@@ -88,7 +88,7 @@ Cloud Dataflow is a fully managed service for running Apache Beam pipelines on G
    python -V
    ```
 
-###### To Create Python Virtual Env in any IDE
+### To Create Python Virtual Env in any IDE
 
 1. Create a virtual env by running given command
 
@@ -116,7 +116,7 @@ Cloud Dataflow is a fully managed service for running Apache Beam pipelines on G
    python --version
    ```
 
-**To Install Apache Beam**
+### **To Install Apache Beam**
 
 1. Run given command to install apache beam gcp.
 
@@ -144,7 +144,7 @@ Cloud Dataflow is a fully managed service for running Apache Beam pipelines on G
    License: Apache License, Version 2.0 
    ```
 
-###### Compatible Apache Beam and Python version to use along
+### Compatible Apache Beam and Python version to use along
 
 * Python version -> `Python 3.9.13`
 * Apache Beam Version -> `Apache Beam 2.56.0`
